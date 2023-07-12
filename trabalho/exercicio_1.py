@@ -1,27 +1,39 @@
-class Veiculo: #criando a classe Veiculo
-    #construtor da classe Veiculo para instanciarmos os atributos ao criar o objeto
-    def __init__(self, tipo, modelo, fabricante, quantidade_passageiros):
-        #settando os atributos com valores passado por parâmetro
-        self.tipo = tipo
-        self.modelo = modelo
-        self.fabricante = fabricante
-        self.quantidade_passageiros = quantidade_passageiros
+class Calculadora:
+    penultimo_numero_ru: int
+    ultimo_numero_ru: int
 
-    #método para pegar o valor do tipo de Veículo
-    def get_tipo(self):
-        return f"{self.tipo}"
+    def get_penultimo_numero_ru(self):
+        return f"{self.penultimo_numero_ru}"
 
-    # método para pegar o valor do modelo e fabricante do Veículo
-    def get_modelo(self):
-        return f"Fabricante: {self.fabricante} - Modelo: {self.modelo}"
+    def get_ultimo_numero_ru(self):
+        return f"{self.ultimo_numero_ru}"
 
-    #método para pegar o número de passageiros que caibam no veículo
-    def get_quantidade_passageiros(self):
-        return f"{self.quantidade_passageiros}"
+    def solicitaValores(self):
+        self.penultimo_numero_ru = int(input("Digite o penultimo número da sua RU: "))
+        self.ultimo_numero_ru = int(input("Digite o último número da sua RU: "))
 
-#criando um objeto Veiculo e armazenando na variável
-veiculo_1 = Veiculo("Carro", "Ford Mustang", "Ford Motor Company", 4)
+        if (self.penultimo_numero_ru == 0):
+            calculadora.penultimo_numero_ru = 5
+        elif (self.ultimo_numero_ru == 0):
+            calculadora.ultimo_numero_ru = 5
 
-#exibindo respostas do código no console
-print(veiculo_1.get_modelo())
-print("é um ", veiculo_1.tipo, " que cabem ", veiculo_1.quantidade_passageiros, " passageiros")
+    def soma(self):
+        return self.penultimo_numero_ru + self.ultimo_numero_ru
+
+    def multiplica(self):
+        return self.penultimo_numero_ru * self.ultimo_numero_ru
+
+print("-------------------|MENU|-------------------")
+print("1 - Soma")
+print("2 - Subtração")
+print("3 - Multiplicação")
+opcao = int(input("Digite a sua operação desejada: "))
+calculadora = Calculadora()
+calculadora.solicitaValores()
+
+if (opcao == 1):
+    print(calculadora.get_penultimo_numero_ru(), "+", calculadora.get_ultimo_numero_ru(), "=", calculadora.soma())
+elif (opcao == 2):
+    print(calculadora.get_penultimo_numero_ru(), "-", calculadora.get_ultimo_numero_ru(), "=", calculadora.subtrai())
+elif (opcao == 3):
+    print(calculadora.get_penultimo_numero_ru(), "x", calculadora.get_ultimo_numero_ru(), "=", calculadora.multiplica())
