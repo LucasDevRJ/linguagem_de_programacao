@@ -20,11 +20,17 @@ class Calculadora:
     def soma(self):
         return self.penultimo_numero_ru + self.ultimo_numero_ru
 
+    def subtrai(self):
+        return self.penultimo_numero_ru - self.ultimo_numero_ru
+
 print("-------------------|MENU|-------------------")
 print("1 - Soma")
+print("2 - Subtração")
 opcao = int(input("Digite a sua operação desejada: "))
+calculadora = Calculadora()
+calculadora.solicitaValores()
 
 if opcao == 1:
-    calculadora = Calculadora()
-    calculadora.solicitaValores()
     print(calculadora.get_penultimo_numero_ru(), "+", calculadora.get_ultimo_numero_ru(), "=", calculadora.soma())
+elif opcao == 2:
+    print(calculadora.get_penultimo_numero_ru(), "-", calculadora.get_ultimo_numero_ru(), "=", calculadora.subtrai())
