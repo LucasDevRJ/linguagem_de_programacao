@@ -29,12 +29,16 @@ class Calculadora:
     def eleva(self):
         return self.penultimo_numero_ru ** self.ultimo_numero_ru
 
+    def retorna_resto(self):
+        return self.penultimo_numero_ru % self.ultimo_numero_ru
+
 print("-------------------|MENU|-------------------")
 print("1 - Soma")
 print("2 - Subtração")
 print("3 - Multiplicação")
 print("4 - Divisão")
 print("5 - Elevar")
+print("6 - Resto")
 opcao = int(input("Digite a sua operação desejada: "))
 calculadora = Calculadora()
 calculadora.solicitaValores()
@@ -49,3 +53,5 @@ elif (opcao == 4):
     print(calculadora.get_penultimo_numero_ru(), "/", calculadora.get_ultimo_numero_ru(), "=", calculadora.dividi())
 elif (opcao == 5):
     print(calculadora.get_penultimo_numero_ru(), "^", calculadora.get_ultimo_numero_ru(), "=", calculadora.eleva())
+elif (opcao == 6):
+    print(calculadora.get_penultimo_numero_ru(), "%", calculadora.get_ultimo_numero_ru(), "=", calculadora.retorna_resto())
