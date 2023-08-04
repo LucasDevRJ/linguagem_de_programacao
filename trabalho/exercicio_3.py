@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 df = pd.read_csv(r'Stores.csv')
@@ -10,3 +11,4 @@ print(disponiveis)
 print(f'Valor Minímo = {min(disponiveis)}')
 print(f'Valor Médio = {sum(disponiveis) / len(disponiveis)}')
 print(f'Valor Máximo = {max(disponiveis)}')
+print(f'Desvio Padrão = {np.std(disponiveis)}')
