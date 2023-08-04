@@ -1,8 +1,10 @@
 import pandas as pd
-import ydata_profiling
 
-import csv
-with open('Stores.csv', newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-    for row in spamreader:
-        print(', '.join(row))
+df = pd.read_csv(r'Stores.csv')
+df = df.rename(columns={'Store ID': 'Identificador', 'Store_Area': 'Área', 'Items_Available': 'Disponiveis',
+                   'Daily_Customer_Count': 'Clientes', 'Store_Sales': 'Vendas'})
+
+disponiveis = df['Disponiveis'].tolist()
+print(disponiveis)
+
+print(f'Valor Minímo = {min(disponiveis)}')
