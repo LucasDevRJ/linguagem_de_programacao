@@ -8,3 +8,5 @@ disponiveis = df['Disponiveis'].tolist()
 print(disponiveis)
 
 print(f'Valor Minímo = {min(disponiveis)}')
+print(f'Valor Médio = {sum(disponiveis) / len(disponiveis)}')
+print(f'Valor Máximo = {max(disponiveis)}')
