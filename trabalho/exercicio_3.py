@@ -21,3 +21,12 @@ print(f'Valor Minímo = {min(clientes)}')
 print(f'Valor Médio = {sum(clientes) / len(clientes)}')
 print(f'Valor Máximo = {max(clientes)}')
 print(f'Desvio Padrão = {np.std(clientes)}')
+print('\n')
+
+vendas = df['Vendas'].tolist()
+
+print(f'Coluna Vendas')
+print(f'Valor Minímo = {min(vendas)}')
+print(f'Valor Médio = {sum(vendas) / len(vendas)}')
+print(f'Valor Máximo = {max(vendas)}')
+print(f'Desvio Padrão = {np.std(vendas)}')
