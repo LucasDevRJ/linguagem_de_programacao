@@ -1,6 +1,8 @@
 import pandas as pd
-from pandas_profiling import ProfileReport
+import ydata_profiling
 
-df = pd.read_csv('Stores.csv', names=['Store ID', 'Store_Area', 'Items_Available', 'Store_Sales'])
-
-ProfileReport(df, explorative=True)
+import csv
+with open('Stores.csv', newline='') as csvfile:
+    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    for row in spamreader:
+        print(', '.join(row))
