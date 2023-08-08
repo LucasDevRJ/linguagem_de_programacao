@@ -37,3 +37,20 @@ print(f'{array_perfomance}')
 #gerando números randomicos
 rng = np.random.default_rng()
 print(rng.random(10))
+
+rng = np.random.default_rng()
+vetor = rng.random(4)
+print(f'Array de uma dimensão randômico: {vetor}')
+
+matriz = rng.random([4,4])
+print(f'Array de duas dimensões randômicas: {matriz}')
+
+tensor = rng.random([4,4,4])
+print(f'Array de três ou mais dimensões randômicas: {tensor}')
+
+rng = np.random.default_rng()
+array_sem_ordenacao = rng.random([2,3])
+print(f'Array sem ordenação: {array_sem_ordenacao}')
+
+arra_com_ordenacao = np.sort(array_sem_ordenacao, axis= None)
+print(f'Array com ordenação: {arra_com_ordenacao}')
