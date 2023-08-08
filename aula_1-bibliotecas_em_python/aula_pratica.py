@@ -60,3 +60,11 @@ array2 = rng.random([2,2])
 array3 = rng.random([2,2])
 array_concatenado = np.concatenate([array2, array3])
 print(array_concatenado)
+
+#propriedades do array
+rng = np.random.default_rng()
+array_teste4 = rng.random([23, 43,17])
+print(f'Quais são duas dimensões: {array_teste4.ndim}')
+print(f'Qual é o seu formato: {array_teste4.shape}')
+print(f'Quantos elementos possui: {array_teste4.size}')
+
