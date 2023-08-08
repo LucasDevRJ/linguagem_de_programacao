@@ -29,3 +29,11 @@ print(f'criação de array numpy utilizando o método .zeros: {array_de_zero}')
 print(f'criação de array numpy utilizando o método .empty: {array_de_vazio}')
 print(f'criação de array numpy utilizando o método .arange: {array_de_ate}')
 print(f'criação de array numpy utilizando o método .linspace: {array_de_limite}')
+
+#consumindo no máximo até 8 bits armazenados no array
+array_perfomance = np.zeros(numeros_elementos, dtype= np.int8)
+print(f'{array_perfomance}')
+
+#gerando números randomicos
+rng = np.random.default_rng()
+print(rng.random(10))
