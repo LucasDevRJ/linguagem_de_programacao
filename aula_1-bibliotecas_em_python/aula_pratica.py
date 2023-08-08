@@ -54,3 +54,9 @@ print(f'Array sem ordenação: {array_sem_ordenacao}')
 
 arra_com_ordenacao = np.sort(array_sem_ordenacao, axis= None)
 print(f'Array com ordenação: {arra_com_ordenacao}')
+
+#concatenação
+array2 = rng.random([2,2])
+array3 = rng.random([2,2])
+array_concatenado = np.concatenate([array2, array3])
+print(array_concatenado)
