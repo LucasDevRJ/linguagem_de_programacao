@@ -10,5 +10,15 @@ df_filtrado = df.filter(items=df_colunas)
 df_filtrado = df.rename(columns={'Regiao - Sigla': 'Região', 'Estado - Sigla': 'Estado'})
 print(df_filtrado)
 
-colunas_estados = df_filtrado['Estado']
-print(colunas_estados)
+coluna_estado = df_filtrado['Estado']
+estado_conta = coluna_estado.value_counts()
+print(estado_conta)
+
+estados = [100 * sigla / estado_conta.sum() for sigla in estado_conta]
+print(estados)
+
+df_colunas2 = ['Estado', 'Produto', 'Valor de Venda']
+df_gasolina = df_filtrado.filter(items=df_colunas2)
+print(df_gasolina)
+df_gasolina = df_gasolina.loc[df_gasolina['Produto'] == 'Gasolina']
+print(df_gasolina)
