@@ -1,4 +1,5 @@
 import numpy as np
+import plotly.express as px
 
 #lista normal
 numeros_elementos = 100000000
@@ -68,3 +69,49 @@ print(f'Quais são duas dimensões: {array_teste4.ndim}')
 print(f'Qual é o seu formato: {array_teste4.shape}')
 print(f'Quantos elementos possui: {array_teste4.size}')
 
+#mudar o formato do array
+array4 = np.arange(0, 20)
+print(f'{array4}')
+
+array4 = array4.reshape(4,5)
+print(array4)
+
+array4 = array4.flatten()
+print(array4)
+
+array4 = np.hsplit(array4, [5])
+print(array4)
+
+#criando arrays para montar
+a = 3/4
+b = 2/4
+c = 1/4
+vetor_a = np.ones(20)
+vetor_b = np.ones(20)
+vetor_c = np.ones(20)
+for i in range(20):
+    vetor_a[i] = vetor_a[i - 1] + a**i
+    vetor_b[i] = vetor_b[i - 1] + a** i
+    vetor_c[i] = vetor_c[i - 1] + a** i
+
+print(vetor_a)
+print(vetor_b)
+print(vetor_c)
+
+np.savetxt('vetor_a.txt', vetor_a, fmt='%f', delimiter=';')
+np.savetxt('vetor_b.txt', vetor_a, fmt='%f', delimiter=';')
+np.savetxt('vetor_c.txt', vetor_a, fmt='%f', delimiter=';')
+
+array_a = np.loadtxt('vetor_a.txt', dtype= np.float64, delimiter=';')
+array_b = np.loadtxt('vetor_b.txt', dtype= np.float64, delimiter=';')
+array_c = np.loadtxt('vetor_c.txt', dtype= np.float64, delimiter=';')
+
+#fig = px.scatter([array_a, array_b, array_c])
+array_abc = np.vstack([array_a, array_b, array_c])
+print(array_abc)
+#fig.show()
+array_abc = array_abc.transpose()
+print(array_abc)
+
+fig = px.scatter(array_abc)
+fig.show()
