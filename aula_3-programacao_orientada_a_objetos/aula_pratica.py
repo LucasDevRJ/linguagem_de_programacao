@@ -13,3 +13,14 @@ class Jogador:
 
 j1 = Jogador()
 j1.jogar()
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def apresentar(self):
+        print(f'Olá, meu nome é {self.nome} e minha idade {self.idade} anos')
+
+p1 = Pessoa('Lucas', 24)
+p1.apresentar()
