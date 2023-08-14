@@ -24,3 +24,9 @@ class Pessoa:
 
 p1 = Pessoa('Lucas', 24)
 p1.apresentar()
+
+class Funcionario(Pessoa):
+    pass
+
+f1 = Funcionario('João', 32)
+f1.apresentar()
