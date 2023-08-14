@@ -51,3 +51,21 @@ class Cliente(Pessoa):
 
 c1 = Cliente('Carlos', 16)
 c1.apresentar()
+
+class Aluno:
+    totalAlunos = 0
+    def __init__(self, nome, nota):
+        Aluno.totalAlunos += 1
+        self.nome = nome
+        self.nota = nota
+        self.ru = 1000 + Aluno.totalAlunos
+
+    def info(self):
+        print(f'Nome: {self.nome}; RU: {self.ru}; Nota: {self.nota}')
+
+    def getNota(self):
+        return self.nota
+
+l1 = Aluno('Fábio', 4.6)
+l1.info()
+print(l1.getNota())
