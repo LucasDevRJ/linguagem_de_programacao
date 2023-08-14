@@ -26,7 +26,28 @@ p1 = Pessoa('Lucas', 24)
 p1.apresentar()
 
 class Funcionario(Pessoa):
-    pass
+    def __init__(self, nome, idade, cadastro):
+        self.nome = nome
+        self.idade = idade
+        self.cadastro = cadastro
 
-f1 = Funcionario('João', 32)
+    def apresentar(self):
+        print(f'Olá, sou o funcionário(a) {self.nome} e minha idade {self.idade} anos')
+
+f1 = Funcionario('João', 32, 1001)
 f1.apresentar()
+print(f'cadastro do {f1.nome} é {f1.cadastro}')
+
+class Cliente(Pessoa):
+    quantidadeClientes = 0
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+        Cliente.quantidadeClientes += 1
+        self.cadastro = 1000 + Cliente.quantidadeClientes
+
+    def apresentar(self):
+        super().apresentar()
+        print(f'Sou o cliente de cadastro {self.cadastro}')
+
+c1 = Cliente('Carlos', 16)
+c1.apresentar()
