@@ -67,5 +67,34 @@ class Aluno:
         return self.nota
 
 l1 = Aluno('Fábio', 4.6)
+l2 = Aluno('Carlos', 7.2)
+l3 = Aluno('Júnior', 8.8)
 l1.info()
 print(l1.getNota())
+
+class Turma:
+    def __init__(self, nome, limiteAlunos):
+        self.nome = nome
+        self.limiteAlunos = limiteAlunos
+        self.listaAlunos = []
+
+    def addAluno(self, aluno):
+        if len(self.listaAlunos) < self.limiteAlunos:
+            self.listaAlunos.append(aluno)
+            print(f'Aluno adicionado')
+            return True
+        return False
+
+    def mediaTurma(self):
+        soma = 0
+        for aluno in self.listaAlunos:
+            soma += aluno.getNota()
+        return soma / len(self.listaAlunos)
+
+
+t1 = Turma('301', 3)
+t1.addAluno(l1)
+t1.addAluno(l2)
+t1.addAluno(l3)
+mediaAluno = t1.mediaTurma()
+print(f'Média da turma: {mediaAluno}')
