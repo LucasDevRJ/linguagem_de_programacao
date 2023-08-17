@@ -1,0 +1,5 @@
+arquivo = open('exemplo.txt', 'w+')
+arquivo.write('Ola Mundo!\nEsta e a segunda linha\nEsta e a terceira linha')
+arquivo.seek(0)
+conteudo = arquivo.read()
+print(conteudo)
