@@ -22,3 +22,10 @@ print(f'Tempo Computacional = {tempo_computacional}')
 long_list = [15] * 10**8
 len_lista = len(long_list)
 print(f'Tamanho da lista = {len_lista}')
+
+tic = time.perf_counter()
+comando2 = take_first(long_list)
+toc = time.perf_counter()
+tempo_computacional = toc - tic
+print(f'Primeiro elemento = {comando2}')
+print(f'Tempo Computacional = {tempo_computacional}')
