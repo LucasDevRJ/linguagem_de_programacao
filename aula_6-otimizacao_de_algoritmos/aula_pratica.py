@@ -51,3 +51,17 @@ constante_df = pd.DataFrame(list(zip(lista_tamanho, constante_tempo)), columns=[
 print(constante_df)
 
 _=sns.lmplot(x='N', y='tempo', data=constante_df, ci=None)
+
+#tempo linear
+#encontrando o valor máximo da lista
+def find_max(m_lista):
+    max_valor = m_lista[0]
+    for i in range(len(m_lista)):
+        if m_lista[i] > max_valor:
+            max_valor = m_lista[i]
+            return max_valor
+
+tic = time.perf_counter()
+maior = find_max(sort_list)
+toc = time.perf_counter()
+print(maior)
