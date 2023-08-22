@@ -29,3 +29,17 @@ toc = time.perf_counter()
 tempo_computacional = toc - tic
 print(f'Primeiro elemento = {comando2}')
 print(f'Tempo Computacional = {tempo_computacional}')
+
+lista_tamanho = [10**l for l in range(1,5)]
+print(lista_tamanho)
+
+constante_tempo = []
+for l in lista_tamanho:
+    lista = [15]*l
+
+tic = time.perf_counter()
+y = take_first(lista)
+toc = time.perf_counter()
+
+constante_tempo.append(toc - tic)
+print(constante_tempo)
