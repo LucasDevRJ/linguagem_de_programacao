@@ -1,5 +1,8 @@
 import time
+
+import geneticalgorithm
 import pandas as pd
+import pip
 import seaborn as sns
 
 
@@ -65,3 +68,38 @@ tic = time.perf_counter()
 maior = find_max(sort_list)
 toc = time.perf_counter()
 print(maior)
+diferenca = tic - toc
+print(diferenca)
+
+#modificando a lista
+linear_tempo = []
+for l in lista_tamanho:
+    lista = [16] * l
+
+tic = time.perf_counter()
+comando3 = find_max(lista)
+toc = time.perf_counter()
+
+linear_tempo.append(toc - tic)
+
+#realizando o DataFrame
+linear_df = pd.DataFrame(list(zip(lista_tamanho, linear_tempo)), columns=['N', 'tempo'])
+print(linear_df)
+
+_s = sns.lmplot(x='N', y='tempo', data=linear_df, ci=None)
+
+#otimização com python
+import numpy as np
+import math
+from geneticalgorithm import geneticalgorithm as ga
+
+def f(x):
+    dim = len(x)
+    OF = 0
+    for i in range(0, dim):
+        OF += (x[i]**2)-10*math.cos(2*math.pi*x[i])+10
+        return OF
+
+varbound = np.array([[-50, 80]])
+algoritmo = ga(function=f, dimension=1, variable_type='real', variable_boundaries=varbound)
+algoritmo.run()
